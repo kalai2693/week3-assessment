@@ -23,7 +23,10 @@ print()
 print("=== AFTER CLEANING ===")
 print(f"Rows {before} -> {len(df)} after cleaning")
 print("Missing:", df.isna().sum().sum())
-print("Duplicates:", df.duplicated().sum())
+print("Exact duplicates (raw):", df.duplicated().sum())
+norm = df.assign(text=df["text"].str.strip().str.lower(),
+                 category=df["category"].str.strip().str.title())
+print("Duplicates after fixing casing:", norm.duplicated().sum())
 print("Category counts:")
 print(df["category"].value_counts())
 
