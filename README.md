@@ -21,3 +21,4 @@
 
 Rows 50 -> 41 after cleaning. Casing was fixed first, then rows with missing values and duplicates were removed. The classes are well balanced, so a baseline that always predicts the most common class gets only about one third accuracy.
 (Run `python task1_audit.py` and paste the output here)
+Submitted by: kalaiarasan
